@@ -183,7 +183,7 @@ public final class DiscordRPC {
 
     //JNA Interface
     private interface DLL extends Library {
-        DLL INSTANCE = Native.load("discord-rpc", DLL.class);
+        DLL INSTANCE = Native.loadLibrary("discord-rpc", DLL.class);
 
         void Discord_Initialize(String applicationId, DiscordEventHandlers handlers, int autoRegister, String optionalSteamId);
         void Discord_Register(String applicationId, String command);
